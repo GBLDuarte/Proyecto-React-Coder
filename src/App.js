@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import NavBar from './components/NavBar/NavBar';
 import './App.css';
+import ItemListContainer from './components/ItemList/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
+    <body className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Editar <code>src/App.js</code> y guardar para notar cambios.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavBar /> 
       </header>
-    </div>
+      <main>
+        <ItemListContainer url="https://http2.mlstatic.com/D_Q_NP_610133-MLA49075693918_022022-P.webp" greeting="Alto zapatitos" descripcion="Talle 51"/>
+      </main>
+    </body>
   );
 }
 
