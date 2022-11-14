@@ -1,15 +1,11 @@
 import React from 'react'
-import './itemlist.css'
+import ItemList from './Itemlist'
 
 
-function ItemListContainer(props) {
+function ItemListContainer() {
     return (
-        <div className='cards'>
-            <img src={props.url} alt="zapatito" />
-            <p>{props.greeting}</p>
-            <p>{props.descripcion}</p>
-        </div>
-    );
+        <ItemList />
+    )
 }
 
 export default ItemListContainer;
