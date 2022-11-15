@@ -1,11 +1,12 @@
 import React from 'react'
-import Item from './Item'
+import ItemList from './ItemList/ItemList'
+import './ItemList/itemlist.css'
 import getProducts from '../../services/mockService'
 import { useState, useEffect } from 'react'
-import './itemlist.css'
 
 
-function Itemlist() {
+
+function ItemListContainer() {
 
     const [products, setProducts] = useState([]);
 
@@ -23,19 +24,8 @@ function Itemlist() {
     }, []);
 
     return (
-        <div className='cardsList'>
-            {products.map((product) => {
-                return (
-                    <Item
-                        key={product.id}
-                        url={product.url}
-                        name={product.name}
-                        price={product.price}
-                    />
-                )
-            })}
-        </div>
+        <ItemList products={products} />
     )
 }
 
-export default Itemlist;
+export default ItemListContainer;
