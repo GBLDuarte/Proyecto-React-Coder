@@ -1,4 +1,5 @@
 import React from 'react'
+import './buttondetail.css'
 
 function ButtonDetail(props) {
     return (

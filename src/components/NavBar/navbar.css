@@ -7,8 +7,13 @@
 }
 
 .navbar a {
+    font-weight: bold;
     text-decoration: none;
     color: wheat;
+}
+
+.navbar a:hover {
+    filter: drop-shadow(0 0 0.8rem black);
 }
 
 .list {
