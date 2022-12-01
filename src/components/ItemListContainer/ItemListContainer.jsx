@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemList from './ItemList/ItemList'
-import getProducts from '../../services/mockService'
+import getProducts from '../../services/firestore'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
