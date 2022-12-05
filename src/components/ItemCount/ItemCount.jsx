@@ -15,9 +15,9 @@ function ItemCount({stock, onAddToCart}) {
 
     return (
         <div>
-            <button onClick={handleSuma}>+</button>
-            <span>{count}</span>
             <button onClick={handleResta}>-</button>
+            <span>{count}</span>
+            <button onClick={handleSuma}>+</button>
             <button onClick={()=> onAddToCart(count)}>Agregar al carrito</button>
         </div>
     )

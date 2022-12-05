@@ -1,12 +1,17 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react'
+import { cartContext } from '../../context/cartContext'
 import '../ItemListContainer/Item/item.css'
 import './itemdetail.css'
 
 function ItemDetail({ product }) {
 
+    const { addToCart } = useContext(cartContext);
+
     function onAddToCart(count) {
         console.log(`${count} productos agregados al carrito`)
+        addToCart(product, count);
     }
 
     return (
