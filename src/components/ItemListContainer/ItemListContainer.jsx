@@ -1,20 +1,22 @@
 import React from 'react'
 import ItemList from './ItemList/ItemList'
-import getProducts from '../../services/firestore'
+import Spinner from '../Spinner/Spinner'
+import getProducts, { getProductsByCategory } from '../../services/firestore'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 function ItemListContainer() {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
     const { idCategory } = useParams();
 
     async function getProductsAsync() {
-        try {
-            let respuesta = await getProducts(idCategory);
+        if (idCategory) {
+            let respuesta = await getProductsByCategory(idCategory);
             setProducts(respuesta);
-        } catch (error) {
-            console.error('Error desde la base de datos', error);
+        } else {
+            let respuesta = await getProducts();
+            setProducts(respuesta);
         }
     }
 
@@ -22,9 +24,10 @@ function ItemListContainer() {
         getProductsAsync();
     }, [idCategory]);
 
-    return (
-        <ItemList products={products} />
-    )
+    return <> {
+        products ? <ItemList products={products} /> : <Spinner />
+    }
+    </>
 }
 
 export default ItemListContainer;

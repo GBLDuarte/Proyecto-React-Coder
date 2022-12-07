@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 function ItemCount({stock, onAddToCart}) {
 
-    let [count, setCount] = useState(0);
+    let [count, setCount] = useState(1);
 
     function handleSuma() {
         (count < stock) && setCount(count + 1);
