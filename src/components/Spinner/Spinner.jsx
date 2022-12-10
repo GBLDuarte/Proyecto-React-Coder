@@ -3,7 +3,9 @@ import './spinner.css'
 
 function Spinner() {
   return (
-    <span className='spinner'></span>
+    <div>
+      <span className='spinner'></span>
+    </div>
   )
 }
 

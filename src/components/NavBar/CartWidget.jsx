@@ -4,11 +4,16 @@ import { cartContext } from '../../context/cartContext'
 
 
 function CartWidget() {
-    
-    const miContext = useContext(cartContext);
-    
+    const { cart, itemsInCart } = useContext(cartContext);
+
+    if (cart.length === 0) {
+        return (
+            <Link to="/cart">🛒</Link>
+        )
+    }
+
     return (
-        <li><Link to="/cart">🛒<span>{miContext.itemsInCart()}</span></Link></li>
+        <Link to="/cart">🛒<span>{itemsInCart()}</span></Link>
     );
 }
 

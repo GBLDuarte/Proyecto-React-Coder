@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from 'firebase/firestore'
+import products from "../data/products";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCfWM7oTwVJ8wwxAZAb1PD-tBKJCC-VE2w",
@@ -9,7 +10,6 @@ const firebaseConfig = {
   messagingSenderId: "58928903339",
   appId: "1:58928903339:web:799eaa106805648cbaf3ee"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const DB = getFirestore(app)
@@ -24,7 +24,7 @@ export default async function getProducts() {
       ...doc.data(),
       id: doc.id,
     };
-  })
+  });
   return documentsData;
 }
 
@@ -35,6 +35,7 @@ export async function getSingleProduct(idParam) {
   const docSnap = await getDoc(docRef);
 
   let itemData = docSnap.data();
+  itemData.id = docSnap.id;
 
   return itemData;
 }
@@ -53,4 +54,22 @@ export async function getProductsByCategory(categoryParams) {
     };
   })
   return documentsData;
+}
+
+// Order
+export async function createOrder(order) {
+  const collectionRef = collection(DB, "orders");
+  const docOrder = await addDoc(collectionRef, order);
+
+  return (docOrder.id);
+}
+
+// Exportar todos los productos a firebase
+export async function exportProductsToFirebase() {
+  const collectionRef = collection(DB, "celulares")
+  for (let item of products) {
+    delete(item.id);
+    let docOrder = await addDoc(collectionRef, item);
+    console.log("creado " + docOrder.id);
+  }
 }

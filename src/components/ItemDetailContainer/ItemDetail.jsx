@@ -25,15 +25,20 @@ function ItemDetail({ product }) {
                     <img src={product.url} alt={product.name} />
                 </div>
                 <div className='cardInfoDetail'>
-                    <h3>{product.name}</h3>
+                    <h3>{product.category} {product.name}</h3>
                     <p>Color: {product.color}</p>
                     <p>{product.info}</p>
                     <p className='strong'>${product.price}</p>
                 </div>
                 {isInCart ?
-                    (<Link to="/cart">
-                        <ButtonDetail>Ir al Carrito</ButtonDetail>
-                    </Link>)
+                    (<div>
+                        <Link style={{ marginRight: "1rem" }} to="/cart">
+                            <ButtonDetail>Ir al Carrito</ButtonDetail>
+                        </Link>
+                        <Link to="/">
+                            <ButtonDetail>Seguir comprando</ButtonDetail>
+                        </Link>
+                    </div>)
                     :
                     (<ItemCount onAddToCart={onAddToCart} stock={product.stock} />)}
             </div>
