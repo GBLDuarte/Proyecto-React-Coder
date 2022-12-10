@@ -18,9 +18,6 @@ function CartView() {
     }
     const orderId = await createOrder(order);
     navigate(`/thankyou/${orderId}`)
-    setTimeout(() => {
-      navigate('/')
-    }, 2000);
     clear();
   }
 
