@@ -28,9 +28,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 55vh;
 }
 
 .alertCart {
     padding-top: 15px;
     text-align: center;
+    min-height: 87vh;
 }

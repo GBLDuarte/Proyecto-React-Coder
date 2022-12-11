@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -21,6 +22,7 @@ function App() {
           <Route path='/thankyou/:idOrder' element= {<Thankyou />} />
           <Route path='*' element={<h1 style={{padding: "1rem", textAlign: "center"}}>Esta pagina no existe! Vuelve a Home.</h1>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </CartContextProvider>
   );

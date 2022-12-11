@@ -1,0 +1,21 @@
+.footerContainer {
+    background-color: slategray;
+    padding: 1rem;
+}
+
+.footerContainer p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: wheat;
+}
+
+.footerContainer p a {
+    color: wheat;
+    text-decoration: none;
+}
+
+.footerContainer p a:hover {
+    text-decoration: underline;
+}
+

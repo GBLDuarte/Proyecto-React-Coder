@@ -49,7 +49,7 @@ function CartView() {
       </div>
       <div className='form'>
         <CartForm clear={clear} onSubmit={checkout} />
-        <h3 style={{ paddingTop: "1rem" }}>Total: ${totalPriceInCart()}</h3>
+        <h3 style={{ padding: "1rem 0" }}>Total: ${totalPriceInCart()}</h3>
       </div>
     </>
   )
