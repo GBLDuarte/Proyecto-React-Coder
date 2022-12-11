@@ -61,7 +61,7 @@ export async function createOrder(order) {
   const collectionRef = collection(DB, "orders");
   const docOrder = await addDoc(collectionRef, order);
 
-  return (docOrder.id);
+  return docOrder.id;
 }
 
 // Exportar todos los productos a firebase

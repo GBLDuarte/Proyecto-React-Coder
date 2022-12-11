@@ -18,14 +18,12 @@ export default function CartForm(props) {
     }
 
     function onSubmit(evt) {
-        if (data.name.length === 0) return;
         evt.preventDefault();
-        props.onSubmit(evt, data);
     }
 
     return (
         <>
-            <h4 style={{margin: "1rem"}}>Complete con sus datos antes de finalizar:</h4>
+            <h4 style={{ margin: "1rem" }}>Complete con sus datos antes de finalizar:</h4>
             <form className="formContainer" onSubmit={onSubmit}>
                 <div>
                     <label htmlFor="name">Nombre Completo</label>
