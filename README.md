@@ -35,6 +35,6 @@ Paso a paso de descargar el proyecto manualmente y ejecutarlo.
 ```
 1. git clone https://github.com/GBLDuarte/Proyecto-React-Coder.git
 2. npm install
-3. npm start (ejecución)
+3. npm start
 ```
 
